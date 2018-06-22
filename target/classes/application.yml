@@ -1,0 +1,16 @@
+#前端界面端口
+server:
+  port: 80
+#设置注册中心当前主机的主机名  
+eureka:
+  instance:
+    hostname: eurekaserver2
+    appname: userview
+  #当前的注册中心是否应该注册在当前注册中心    true将自己作为一个微服务注册到中心  必须指定appname
+  client: 
+    registerWithEureka: false
+    #是否讲注册中心所有的微服务抓取到本地
+    fetchRegistry: true
+    #该地址是用于发现微服务
+    serviceUrl:
+      defaultZone: http://eurekaserver1:8761/eureka/
